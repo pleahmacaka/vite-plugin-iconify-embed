@@ -1,0 +1,51 @@
+{
+  "name": "vite-plugin-iconify-embed",
+  "version": "0.1.0",
+  "description": "Embed only the Iconify icons your sources name, so the app never calls the Iconify API",
+  "license": "MIT",
+  "author": "PleahMaCaka <pleahmacaka@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PleahMaCaka/vite-plugin-iconify-embed.git"
+  },
+  "keywords": [
+    "vite-plugin",
+    "iconify",
+    "icons",
+    "offline",
+    "tree-shaking"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./client": {
+      "types": "./client.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "client.d.ts"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "check": "tsc",
+    "lint": "biome check .",
+    "prepublishOnly": "bun run check && bun run lint && bun run build"
+  },
+  "dependencies": {
+    "@iconify/types": "^2.0.0",
+    "@iconify/utils": "^3.1.7"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.2",
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
+  },
+  "peerDependencies": {
+    "vite": "^8.0.0"
+  }
+}
