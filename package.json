@@ -34,7 +34,7 @@
     "check": "tsc",
     "lint": "biome check .",
     "prepublishOnly": "bun run check && bun run lint && bun run build",
-    "prepare": "tsc -p tsconfig.build.json"
+    "prepare": "tsc -p tsconfig.build.json --noCheck"
   },
   "dependencies": {
     "@iconify/types": "^2.0.0",
